@@ -1,0 +1,355 @@
+/* 3.1. Seletor universal e remoção de espaçamentos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Importando a Fonte Local */
+@font-face {
+    font-family: 'Determination';
+    src: url('determination.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 3.2. Rolagem suave */
+html {
+    scroll-behavior: smooth;
+    background-color: #000000;
+}
+
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Determination', monospace;
+    image-rendering: pixelated;
+}
+
+/* 3.3. Formatação dos links & 3.4. Efeito ao passar o mouse */
+a {
+    text-decoration: none;
+    font-family: 'Determination', monospace;
+    font-size: 1.3em;
+    color: #ffffff;
+    font-weight: bold;
+    transition: 0.5s;
+    border: 2px dashed transparent;
+    padding: 2px 8px;
+}
+
+a:hover {
+    color: #ffff00;
+    border-color: #ffffff;
+}
+
+/* 3.5. Dimensões do menu */
+.menu {
+    width: 100%;
+    min-height: 15vh;
+    background-color: #000000;
+    border-bottom: 6px double #ffffff;
+    padding-top: 1vh;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+/* 3.10. Logotipo e navegação */
+.logo {
+    width: 30%;
+    float: left;
+    color: #00ff00;
+    font-size: 1.1rem;
+    line-height: 1.3;
+}
+
+.logo span {
+    color: #ffff00;
+}
+
+.nav {
+    width: 70%;
+    float: left;
+    padding-top: 2vh;
+}
+
+.nav ul {
+    list-style-type: none;
+    text-align: right;
+}
+
+.nav ul li {
+    display: inline-block;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 10px;
+}
+
+/* 3.6. Configuração do banner */
+.banner {
+    width: 100%;
+    min-height: 35vh;
+    background-color: #000000;
+    border: 6px double #ffffff;
+    margin: 20px 0;
+    padding: 30px;
+}
+
+.banner h1 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+
+.banner p {
+    font-size: 1.4rem;
+    color: #00ff00;
+    margin-bottom: 20px;
+}
+
+.kromer-display {
+    color: #ffff00;
+    font-size: 1.8rem;
+    font-weight: bold;
+    border-top: 2px dashed #333;
+    padding-top: 10px;
+    text-align: right;
+}
+
+/* 3.7. Posicionamento lado a lado com float (Seções base) */
+.p_esq, .p_dir, .d_esq, .d_dir {
+    width: 50%;
+    min-height: 65vh;
+    float: left;
+    background-color: #000000;
+    border: 6px double #ffffff;
+    overflow: hidden;
+}
+
+/* 3.12. Formatação dos textos */
+.texto {
+    font-family: 'Determination', monospace;
+    font-size: 1.2em;
+    text-align: justify;
+    padding: 6%;
+}
+
+.texto h2 {
+    font-size: 1.8rem;
+    color: #ffff00;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+
+.texto p {
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+/* Ajuste das imagens para não estourarem o limite da tela */
+.imagem-conteudo {
+    display: block;
+    max-width: 90%;
+    max-height: 50vh;
+    width: auto;
+    height: auto;
+    margin: auto;
+    padding: 2vh 0;
+}
+
+/* Lista de Produtos */
+.shop-list {
+    list-style: none;
+    margin-bottom: 15px;
+}
+
+.shop-list li {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3rem;
+    padding: 6px 0;
+}
+
+.heart-pointer {
+    color: #ff0000;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.item-price {
+    color: #ffff00;
+}
+
+/* Botão RPG */
+.spamton-btn {
+    background: #000000;
+    color: #ffffff;
+    border: 4px solid #ffffff;
+    padding: 8px;
+    font-family: 'Determination', monospace;
+    font-size: 1.3rem;
+    cursor: pointer;
+    width: 100%;
+}
+
+.spamton-btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* 3.9. Rodapé e propriedade clear */
+.rodape {
+    clear: both;
+    width: 100%;
+    min-height: 20vh;
+    background-color: #000000;
+    border-top: 6px double #ffffff;
+    padding-top: 2vh;
+}
+
+/* 3.13. Divisão do rodapé em duas áreas */
+.r_esq {
+    width: 50%;
+    min-height: 15vh;
+    border-right: 1px solid #ffffff;
+    float: left;
+    padding-left: 5%;
+}
+
+.logo-rodape-texto {
+    color: #ff00ff;
+    font-size: 1.8rem;
+    line-height: 1.2;
+}
+
+.r_dir {
+    width: 50%;
+    min-height: 15vh;
+    float: left;
+    padding-left: 5%;
+}
+
+.r_dir ul {
+    list-style-type: none;
+    color: #fff;
+    font-family: 'Determination', monospace;
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+.r_dir ul strong {
+    color: #ffff00;
+}
+
+/* Janelas Pop-up Falsas */
+.fake-popup {
+    position: fixed;
+    width: 280px;
+    background-color: #c0c0c0;
+    border: 3px outset #fff;
+    color: #000;
+    z-index: 9999;
+    font-family: Arial, sans-serif;
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.8);
+}
+
+.popup-header {
+    background-color: #000080;
+    color: white;
+    padding: 4px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+.popup-header button {
+    background-color: #c0c0c0;
+    border: 2px outset #fff;
+    width: 18px;
+    height: 18px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.popup-body {
+    padding: 15px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.popup-btn {
+    margin-top: 10px;
+    background-color: #c0c0c0;
+    border: 2px outset #fff;
+    padding: 4px 12px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+/* ==========================================================================
+   REGRAS DE RESPONSIVIDADE (MEDIA QUERIES)
+   ========================================================================== */
+
+/* Quando a tela for menor ou igual a 800px de largura (janela encolhida/celulares) */
+@media screen and (max-width: 800px) {
+    
+    /* Faz o menu expandir verticalmente e centraliza os elementos */
+    .menu {
+        height: auto;
+    }
+    .logo, .nav {
+        width: 100%;
+        float: none;
+        text-align: center;
+    }
+    .nav {
+        padding-top: 15px;
+    }
+    .nav ul {
+        text-align: center;
+    }
+
+    /* Transforma as colunas duplas de 50% em blocos de 100% empilhados */
+    .p_esq, .p_dir, .d_esq, .d_dir {
+        width: 100%;
+        height: auto;
+        min-height: auto;
+        float: none;
+    }
+
+    /* Da uma folga extra para o conteúdo respirar dentro do bloco */
+    .texto {
+        padding: 25px;
+    }
+
+    /* Redimensiona de forma segura as imagens na visualização mobile */
+    .imagem-conteudo {
+        max-width: 80%;
+        height: auto;
+        padding: 20px 0;
+    }
+
+    /* Reorganiza o rodapé para não esmagar os textos de contato */
+    .rodape {
+        height: auto;
+    }
+    .r_esq, .r_dir {
+        width: 100%;
+        height: auto;
+        min-height: auto;
+        float: none;
+        border-right: none;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    /* Diminui levemente a fonte do banner para não quebrar linhas de forma estranha */
+    .banner h1 {
+        font-size: 1.6rem;
+    }
+}

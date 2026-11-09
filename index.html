@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[[MANDA-CHUVA]] - SPAMTON G. SPAMTON</title>
+    <!-- ADICIONANDO O ÍCONE DA ALMA NA ABA DO NAVEGADOR -->
+    <link rel="icon" type="image/png" href="imagens/icon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="menu">
+        <div class="logo">AGORA É SUA CHANCE<br><span>DE SER O [[MANDA-CHUVA]]</span></div>
+        <div class="nav">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#sobre">SOBRE</a></li>
+                <li><a href="#produtos">PRODUTOS</a></li>
+                <li><a href="#contato">NEGÓCIO</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- BANNER COM A IMAGEM DE FUNDO CONFIGURADA -->
+    <div class="banner">
+        <div class="banner-conteudo">
+            <h1>AGORA É SUA CHANCE DE SER O [[MANDA-CHUVA]]</h1>
+            <p>OFERTAS TÃO BOAS QUE EU VOU ME [$!$$] INTEIRO!</p>
+            <div class="kromer-display">1739 KROMER</div>
+        </div>
+    </div>
+
+    <!-- SEÇÃO SOBRE -->
+    <div class="p_esq" id="sobre">
+        <div class="texto">
+            <h2>PROFIL3: O EX-ADDISON QUE CAIU EM DESGRAÇA</h2>
+            <p>Antes de se esconder no [[Lixão]], ele era apenas mais um comerciante ignorado pelos Lightners. Mas tudo mudou quando ele fez a [[Ligação Telefônica Certa]] e o sucesso subiu à cabeça!</p>
+            <p>Seus produtos finalmente alcançaram os clicks! Ele conquistou seu próprio quarto na Mansão da Queen, ostentando carros e comerciais de TV. Mas quando seu misterioso benfeitor disappeared no ar, suas vendas despencaram para zero...</p>
+            <p>Por que ser a [[Esponjinha]] que odeia sua vida de [[$4,99]] quando você pode se tornar o grande [[MANDA-CHUVA!!!]]</p>
+        </div>
+    </div>
+    <div class="p_dir">
+        <img src="imagens/Spamton.webp" alt="Spamton" class="imagem-conteudo">
+    </div>
+
+    <!-- SEÇÃO PRODUTOS -->
+    <div class="d_esq" id="produtos">
+        <img src="imagens/Spamton_Shop.webp" alt="Loja do Spamton" class="imagem-conteudo">
+    </div>
+    <div class="d_dir">
+        <div class="texto">
+            <h2>[[PRODUTOS QUENTES]] DIRETO DA CYBER CITY</h2>
+            <ul class="shop-list">
+                <li onmouseenter="moveHeart(0)"><span class="item-name"><span class="heart-pointer">♥</span> GeradorDeChaves</span> <span class="item-price">34898 KROMER</span></li>
+                <li onmouseenter="moveHeart(1)"><span class="item-name"><span class="heart-pointer" style="visibility: hidden;">♥</span> Poção S.</span> <span class="item-price">147 KROMER</span></li>
+                <li onmouseenter="moveHeart(2)"><span class="item-name"><span class="heart-pointer" style="visibility: hidden;">♥</span> "O MAIORAL"</span> <span class="item-price">93 KROMER</span></li>
+                <li onmouseenter="moveHeart(3)"><span class="item-name"><span class="heart-pointer" style="visibility: hidden;">♥</span> GRAVATA BORBOLETA B.S.</span> <span class="item-price">51 KROMER</span></li>
+            </ul>
+            <button onclick="window.alert('[HIPERLINK BLOQUEADO]')" class="spamton-btn">FUGIR CORRENDO</button>
+        </div>
+    </div>
+
+    <!-- RODAPÉ -->
+    <div class="rodape" id="contato">
+        <div class="r_esq">
+            <div class="logo-rodape-texto">SPAMTON G.<br>SPAMTON</div>
+        </div>
+        <div class="r_dir">
+            <ul>
+                <li><strong>Endereço:</strong> [[LIXÃO DA CIDADE CIBERNÉTICA]], Lote 1997</li>
+                <li><strong>Contato / Whatsapp:</strong> 1-800-SPAMTON</li>
+                <li><strong>Horários:</strong> SEMPRE ABERTO PARA [[GRANDES NEGÓCIOS]]</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- SCRIPTS INTERATIVOS E GERADOR DE POP-UPS -->
+    <script>
+        // Move o coração de seleção na lista de produtos
+        function moveHeart(index) {
+            const hearts = document.querySelectorAll('.heart-pointer');
+            hearts.forEach((heart, i) => {
+                heart.style.visibility = (i === index) ? 'visible' : 'hidden';
+            });
+        }
+
+        // Gera as janelas de anúncios falsos estilo Windows 95
+        function createPopup() {
+            const pop = document.createElement('div');
+            pop.className = 'fake-popup';
+            pop.style.top = Math.random() * 70 + 10 + '%';
+            pop.style.left = Math.random() * 70 + 10 + '%';
+            
+            const titles = ["[[PROMOÇÃO INCRÍVEL]]", "[[KROMER GRÁTIS!!!]]", "VOCÊ É O [[MANDA-CHUVA]]", "[[Mães solteiras na sua área]]"];
+            const texts = ["CLIQUE AQUI PARA GANHAR ALMA GRÁTIS!", "AUMENTE SEU [[Status de Vendas]] EM 400%!", "VOCÊ GANHOU 100000 [Kromer]!", "[Hiperlink Bloqueado]"];
+            
+            pop.innerHTML = `
+                <div class="popup-header"><span>${titles[Math.floor(Math.random()*titles.length)]}</span><button onclick="this.parentElement.parentElement.remove()">X</button></div>
+                <div class="popup-body"><p>${texts[Math.floor(Math.random()*texts.length)]}</p><button class="popup-btn">VER AGORA!</button></div>
+            `;
+            document.body.appendChild(pop);
+        }
+        
+        // Dispara um novo pop-up a cada 5 segundos automaticamente
+        setInterval(createPopup, 5000);
+        
+        // Abre o primeiro assim que a página carrega
+        window.onload = createPopup;
+    </script>
+</body>
+</html>
