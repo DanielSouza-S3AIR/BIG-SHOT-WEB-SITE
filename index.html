@@ -240,64 +240,6 @@
             color: #00ffff;
         }
 
-        /* ===== POP-UPS ===== */
-        .fake-popup {
-            position: fixed;
-            width: 280px;
-            max-width: 90vw;
-            background: #c0c0c0;
-            border: 2px solid #000;
-            box-shadow: 3px 3px 0 #000;
-            font-family: 'Courier New', monospace;
-            color: #000;
-            z-index: 9999;
-        }
-
-        .popup-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: linear-gradient(90deg, #000080, #1084d0);
-            color: #fff;
-            padding: 4px 8px;
-            font-size: 0.8rem;
-            font-weight: bold;
-        }
-
-        .popup-header button {
-            background: #c0c0c0;
-            border: 1px solid #000;
-            cursor: pointer;
-            font-weight: bold;
-            width: 20px;
-            height: 20px;
-            line-height: 1;
-            font-size: 0.75rem;
-        }
-
-        .popup-body {
-            padding: 12px;
-            font-size: 0.8rem;
-        }
-
-        .popup-body p {
-            margin-bottom: 10px;
-        }
-
-        .popup-btn {
-            background: #c0c0c0;
-            border: 2px outset #fff;
-            padding: 4px 12px;
-            cursor: pointer;
-            font-family: inherit;
-            font-size: 0.75rem;
-            font-weight: bold;
-        }
-
-        .popup-btn:active {
-            border-style: inset;
-        }
-
         /* ===== MEDIA QUERIES PARA DESKTOP (layout lado a lado) ===== */
         @media (min-width: 768px) {
             body {
@@ -361,10 +303,6 @@
                 justify-content: center;
                 gap: 12px;
             }
-
-            .fake-popup {
-                width: 85vw;
-            }
         }
     </style>
 </head>
@@ -395,6 +333,53 @@
             <h2>PROFIL3: O EX-ADDISON QUE CAIU EM DESGRAÇA</h2>
             <p>Antes de se esconder no [[Lixão]], ele era apenas mais um comerciante ignorado pelos Lightners. Mas tudo mudou quando ele fez a [[Ligação Telefônica Certa]] e o sucesso subiu à cabeça!</p>
             <p>Seus produtos finalmente alcançaram os clicks! Ele conquistou seu próprio quarto na Mansão da Queen, ostentando carros e comerciais de TV. Mas quando seu misterioso benfeitor desapareceu no ar, suas vendas despencaram para zero...</p>
+            <p>Por que ser a [[Esponjinha]] que odeia sua vida de [[$4,99]] quando você pode se tornar o grande [[MANDA-CHUVA!!!]]</p>
+        </div>
+    </div>
+    <div class="p_dir">
+        <img src="imagens/Spamton.webp" alt="Spamton" class="imagem-conteudo">
+    </div>
+
+    <div class="d_esq" id="produtos">
+        <img src="imagens/Spamton_Shop.webp" alt="Loja do Spamton" class="imagem-conteudo">
+    </div>
+    <div class="d_dir">
+        <div class="texto">
+            <h2>[[PRODUTOS QUENTES]] DIRETO DA CYBER CITY</h2>
+            <ul class="shop-list">
+                <li onmouseenter="moveHeart(0)" onclick="moveHeart(0)"><span class="item-name"><span class="heart-pointer">♥</span> GeradorDeChaves</span> <span class="item-price">34898 KROMER</span></li>
+                <li onmouseenter="moveHeart(1)" onclick="moveHeart(1)"><span class="item-name"><span class="heart-pointer" style="visibility: hidden;">♥</span> Poção S.</span> <span class="item-price">147 KROMER</span></li>
+                <li onmouseenter="moveHeart(2)" onclick="moveHeart(2)"><span class="item-name"><span class="heart-pointer" style="visibility: hidden;">♥</span> "O MAIORAL"</span> <span class="item-price">93 KROMER</span></li>
+                <li onmouseenter="moveHeart(3)" onclick="moveHeart(3)"><span class="item-name"><span class="heart-pointer" style="visibility: hidden;">♥</span> GRAVATA BORBOLETA B.S.</span> <span class="item-price">51 KROMER</span></li>
+            </ul>
+            <button onclick="window.alert('[HIPERLINK BLOQUEADO]')" class="spamton-btn">FUGIR CORRENDO</button>
+        </div>
+    </div>
+
+    <div class="rodape" id="contato">
+        <div class="r_esq">
+            <div class="logo-rodape-texto">SPAMTON G.<br>SPAMTON</div>
+        </div>
+        <div class="r_dir">
+            <ul>
+                <li><strong>Endereço:</strong> [[LIXÃO DA CIDADE CIBERNÉTICA]], Lote 1997</li>
+                <li><strong>Contato / Whatsapp:</strong> 1-800-SPAMTON</li>
+                <li><strong>Horários:</strong> SEMPRE ABERTO PARA [[GRANDES NEGÓCIOS]]</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Move o coração de seleção na lista de produtos
+        function moveHeart(index) {
+            const hearts = document.querySelectorAll('.heart-pointer');
+            hearts.forEach((heart, i) => {
+                heart.style.visibility = (i === index) ? 'visible' : 'hidden';
+            });
+        }
+    </script>
+</body>
+</html> produtos finalmente alcançaram os clicks! Ele conquistou seu próprio quarto na Mansão da Queen, ostentando carros e comerciais de TV. Mas quando seu misterioso benfeitor desapareceu no ar, suas vendas despencaram para zero...</p>
             <p>Por que ser a [[Esponjinha]] que odeia sua vida de [[$4,99]] quando você pode se tornar o grande [[MANDA-CHUVA!!!]]</p>
         </div>
     </div>
