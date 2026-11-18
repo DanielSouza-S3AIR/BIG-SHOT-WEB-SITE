@@ -3,481 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[[MANDA-CHUVA]] - SPAMTON G. SPAMTON</title>
-    <link rel="icon" type="image/png" href="imagens/icon.png">
+    <title>BIG SHOT - Deltarune</title>
+    <!-- Link para o seu arquivo CSS -->
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* ===== RESET E BASE ===== */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Courier New', monospace;
-            background: #0a0a0a;
-            color: #fff;
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* ===== MENU ===== */
-        .menu {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            padding: 12px 20px;
-            background: #111;
-            border-bottom: 3px solid #ff00ff;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo {
-            font-size: 1rem;
-            font-weight: bold;
-            color: #ff00ff;
-            text-shadow: 0 0 8px #ff00ff;
-            line-height: 1.2;
-        }
-
-        .logo span {
-            color: #00ffff;
-        }
-
-        .nav ul {
-            display: flex;
-            flex-wrap: wrap;
-            list-style: none;
-            gap: 15px;
-        }
-
-        .nav a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: color 0.2s;
-        }
-
-        .nav a:hover {
-            color: #ff00ff;
-        }
-
-        /* ===== BANNER ===== */
-        .banner {
-            min-height: 55vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, #1a0033 0%, #330066 50%, #1a0033 100%);
-            border-bottom: 3px solid #00ffff;
-        }
-
-        .banner-conteudo h1 {
-            font-size: clamp(1.3rem, 5vw, 2.8rem);
-            color: #ff00ff;
-            text-shadow: 0 0 15px #ff00ff;
-            margin-bottom: 15px;
-        }
-
-        .banner-conteudo p {
-            font-size: clamp(0.85rem, 3vw, 1.1rem);
-            color: #00ffff;
-            margin-bottom: 20px;
-        }
-
-        .kromer-display {
-            display: inline-block;
-            background: #000;
-            border: 2px solid #ff00ff;
-            padding: 10px 25px;
-            font-size: clamp(1rem, 4vw, 1.5rem);
-            color: #00ff00;
-            text-shadow: 0 0 10px #00ff00;
-            letter-spacing: 2px;
-        }
-
-        /* ===== SEÇÕES ===== */
-        .p_esq, .p_dir, .d_esq, .d_dir {
-            padding: 40px 20px;
-        }
-
-        .p_esq, .d_dir {
-            background: #0f0f0f;
-        }
-
-        .p_dir, .d_esq {
-            background: #1a1a1a;
-        }
-
-        .texto h2 {
-            font-size: clamp(1.1rem, 4vw, 1.8rem);
-            color: #ff00ff;
-            text-shadow: 0 0 10px #ff00ff;
-            margin-bottom: 20px;
-        }
-
-        .texto p {
-            font-size: clamp(0.85rem, 3vw, 1rem);
-            margin-bottom: 15px;
-            color: #ddd;
-        }
-
-        .imagem-conteudo {
-            margin: 0 auto;
-            border: 3px solid #00ffff;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
-            max-width: 400px;
-        }
-
-        /* ===== LISTA DE PRODUTOS ===== */
-        .shop-list {
-            list-style: none;
-            margin-bottom: 25px;
-        }
-
-        .shop-list li {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 10px;
-            padding: 12px;
-            border-bottom: 1px dashed #333;
-            cursor: pointer;
-            transition: background 0.2s;
-            flex-wrap: wrap;
-        }
-
-        .shop-list li:hover {
-            background: rgba(255, 0, 255, 0.1);
-        }
-
-        .item-name {
-            font-size: clamp(0.8rem, 3vw, 1rem);
-            color: #00ffff;
-        }
-
-        .item-price {
-            font-size: clamp(0.75rem, 3vw, 0.95rem);
-            color: #00ff00;
-            white-space: nowrap;
-        }
-
-        .heart-pointer {
-            color: #ff0000;
-            margin-right: 5px;
-            text-shadow: 0 0 5px #ff0000;
-        }
-
-        .spamton-btn {
-            background: #ff00ff;
-            color: #fff;
-            border: none;
-            padding: 12px 25px;
-            font-family: inherit;
-            font-size: clamp(0.8rem, 3vw, 1rem);
-            font-weight: bold;
-            cursor: pointer;
-            width: 100%;
-            max-width: 300px;
-            transition: transform 0.15s, box-shadow 0.15s;
-        }
-
-        .spamton-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px #ff00ff;
-        }
-
-        .spamton-btn:active {
-            transform: scale(0.98);
-        }
-
-        /* ===== RODAPÉ ===== */
-        .rodape {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            padding: 30px 20px;
-            background: #050505;
-            border-top: 3px solid #ff00ff;
-        }
-
-        .logo-rodape-texto {
-            font-size: clamp(1.1rem, 4vw, 1.5rem);
-            font-weight: bold;
-            color: #ff00ff;
-            text-shadow: 0 0 10px #ff00ff;
-            line-height: 1.2;
-        }
-
-        .r_dir ul {
-            list-style: none;
-        }
-
-        .r_dir li {
-            font-size: clamp(0.75rem, 2.8vw, 0.9rem);
-            margin-bottom: 10px;
-            color: #ccc;
-        }
-
-        .r_dir strong {
-            color: #00ffff;
-        }
-
-        /* ===== MEDIA QUERIES PARA DESKTOP (layout lado a lado) ===== */
-        @media (min-width: 768px) {
-            body {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .menu,
-            .banner,
-            .rodape {
-                grid-column: 1 / -1;
-            }
-
-            .p_esq, .p_dir {
-                display: flex;
-                align-items: center;
-            }
-
-            .p_esq {
-                justify-content: flex-end;
-            }
-
-            .d_esq {
-                justify-content: flex-end;
-            }
-
-            .texto {
-                max-width: 500px;
-            }
-
-            .p_esq .texto {
-                padding-right: 30px;
-            }
-
-            .d_dir .texto {
-                padding-left: 30px;
-            }
-
-            .imagem-conteudo {
-                max-width: 100%;
-            }
-
-            .spamton-btn {
-                width: auto;
-            }
-
-            .rodape {
-                justify-content: space-between;
-                align-items: center;
-            }
-        }
-
-        /* ===== AJUSTES ESPECÍFICOS PARA MOBILE ===== */
-        @media (max-width: 767px) {
-            .menu {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .nav ul {
-                justify-content: center;
-                gap: 12px;
-            }
-        }
-    </style>
 </head>
 <body>
 
-    <div class="menu">
-        <div class="logo">AGORA É SUA CHANCE<br><span>DE SER O [[MANDA-CHUVA]]</span></div>
-        <div class="nav">
+    <!-- MENU -->
+    <header class="menu">
+        <div class="logo">
+            SPAMTON<br><span>G. SPAMTON</span>
+        </div>
+        <nav class="nav">
             <ul>
-                <li><a href="#">HOME</a></li>
                 <li><a href="#sobre">SOBRE</a></li>
-                <li><a href="#produtos">PRODUTOS</a></li>
-                <li><a href="#contato">NEGÓCIO</a></li>
+                <li><a href="#loja">[OFERTAS]</a></li>
+                <li><a href="#contato">CONTATO</a></li>
             </ul>
-        </div>
-    </div>
+        </nav>
+    </header>
 
-    <div class="banner">
-        <div class="banner-conteudo">
-            <h1>AGORA É SUA CHANCE DE SER O [[MANDA-CHUVA]]</h1>
-            <p>OFERTAS TÃO BOAS QUE EU VOU ME [$!$$] INTEIRO!</p>
-            <div class="kromer-display">1739 KROMER</div>
+    <!-- BANNER PRINCIPAL -->
+    <section class="banner">
+        <h1>BEM-VINDO AO MEU [Paraíso de Ofertas]!</h1>
+        <p>NÃO PERCA A CHANCE DE SE TORNAR UM [BIG SHOT]!</p>
+        <div class="kromer-display">
+            KR$ 1997
         </div>
-    </div>
+    </section>
 
-    <div class="p_esq" id="sobre">
+    <!-- CONTEÚDO LADO A LADO (Usando as classes p_esq e p_dir) -->
+    <main>
+        <section class="p_esq" id="sobre">
+            <div class="texto">
+                <h2>SOBRE MIM</h2>
+                <p>EU ERA APENAS UM [Pequeno Empresário] TENTANDO VENDER [Produtos de Qualidade]... ATÉ QUE UM [Amigo Especial] ME AJUDOU A FICAR [Grande]!</p>
+                <!-- Substitua o 'src' pela imagem real da sua pasta imagens -->
+                <img src="imagens/spamton.png" alt="Spamton G. Spamton" class="imagem-conteudo">
+            </div>
+        </section>
+
+        <section class="p_dir" id="loja">
+            <div class="texto">
+                <h2>[ITENS] À VENDA</h2>
+                <ul class="shop-list">
+                    <li><span class="heart-pointer">❤</span> Pipis <span class="item-price">KR$ 100</span></li>
+                    <li><span class="heart-pointer">❤</span> Anel de Espinhos <span class="item-price">KR$ 500</span></li>
+                    <li><span class="heart-pointer">❤</span> [PIPIS] <span class="item-price">KR$ 1000</span></li>
+                    <li><span class="heart-pointer">❤</span> Chave de Fenda <span class="item-price">KR$ 50</span></li>
+                </ul>
+                <button class="spamton-btn">COMPRE AGORA, [Idiota]!</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- SEGUNDA FILEIRA LADO A LADO (Usando d_esq e d_dir) -->
+    <section class="d_esq">
         <div class="texto">
-            <h2>PROFIL3: O EX-ADDISON QUE CAIU EM DESGRAÇA</h2>
-            <p>Antes de se esconder no [[Lixão]], ele era apenas mais um comerciante ignorado pelos Lightners. Mas tudo mudou quando ele fez a [[Ligação Telefônica Certa]] e o sucesso subiu à cabeça!</p>
-            <p>Seus produtos finalmente alcançaram os clicks! Ele conquistou seu próprio quarto na Mansão da Queen, ostentando carros e comerciais de TV. Mas quando seu misterioso benfeitor desapareceu no ar, suas vendas despencaram para zero...</p>
-            <p>Por que ser a [[Esponjinha]] que odeia sua vida de [[$4,99]] quando você pode se tornar o grande [[MANDA-CHUVA!!!]]</p>
+            <h2>MEUS [Segredos]</h2>
+            <p>Você quer saber como eu fiquei tão [Grande e Poderoso]? É TUDO SOBRE [Vendas]!</p>
+            <img src="imagens/dump.png" alt="Dump" class="imagem-conteudo">
         </div>
-    </div>
-    <div class="p_dir">
-        <img src="imagens/Spamton.webp" alt="Spamton" class="imagem-conteudo">
-    </div>
+    </section>
 
-    <div class="d_esq" id="produtos">
-        <img src="imagens/Spamton_Shop.webp" alt="Loja do Spamton" class="imagem-conteudo">
-    </div>
-    <div class="d_dir">
+    <section class="d_dir">
         <div class="texto">
-            <h2>[[PRODUTOS QUENTES]] DIRETO DA CYBER CITY</h2>
-            <ul class="shop-list">
-                <li onmouseenter="moveHeart(0)" onclick="moveHeart(0)"><span class="item-name"><span class="heart-pointer">♥</span> GeradorDeChaves</span> <span class="item-price">34898 KROMER</span></li>
-                <li onmouseenter="moveHeart(1)" onclick="moveHeart(1)"><span class="item-name"><span class="heart-pointer" style="visibility: hidden;">♥</span> Poção S.</span> <span class="item-price">147 KROMER</span></li>
-                <li onmouseenter="moveHeart(2)" onclick="moveHeart(2)"><span class="item-name"><span class="heart-pointer" style="visibility: hidden;">♥</span> "O MAIORAL"</span> <span class="item-price">93 KROMER</span></li>
-                <li onmouseenter="moveHeart(3)" onclick="moveHeart(3)"><span class="item-name"><span class="heart-pointer" style="visibility: hidden;">♥</span> GRAVATA BORBOLETA B.S.</span> <span class="item-price">51 KROMER</span></li>
-            </ul>
-            <button onclick="window.alert('[HIPERLINK BLOQUEADO]')" class="spamton-btn">FUGIR CORRENDO</button>
+            <h2>[PIPIS]</h2>
+            <p>A MELHOR [Coisa] QUE VOCÊ VAI COMPRAR NA VIDA! NÃO QUESTIONE, APENAS [Compre]!</p>
+            <img src="imagens/pipis.png" alt="Pipis" class="imagem-conteudo">
         </div>
-    </div>
+    </section>
 
-    <div class="rodape" id="contato">
+    <!-- RODAPÉ -->
+    <footer class="rodape" id="contato">
         <div class="r_esq">
-            <div class="logo-rodape-texto">SPAMTON G.<br>SPAMTON</div>
+            <div class="logo-rodape-texto">
+                CONTATE-ME<br>AGORA MESMO!
+            </div>
         </div>
         <div class="r_dir">
             <ul>
-                <li><strong>Endereço:</strong> [[LIXÃO DA CIDADE CIBERNÉTICA]], Lote 1997</li>
-                <li><strong>Contato / Whatsapp:</strong> 1-800-SPAMTON</li>
-                <li><strong>Horários:</strong> SEMPRE ABERTO PARA [[GRANDES NEGÓCIOS]]</li>
+                <li><strong>Email:</strong> bigshot@cyberworld.com</li>
+                <li><strong>Telefone:</strong> [Número Indisponível]</li>
+                <li><strong>Local:</strong> Lixeira de Cyberworld</li>
             </ul>
         </div>
-    </div>
+    </footer>
 
-    <script>
-        // Move o coração de seleção na lista de produtos
-        function moveHeart(index) {
-            const hearts = document.querySelectorAll('.heart-pointer');
-            hearts.forEach((heart, i) => {
-                heart.style.visibility = (i === index) ? 'visible' : 'hidden';
-            });
-        }
-    </script>
-</body>
-</html>an class="item-name"><span class="heart-pointer" style="visibility: hidden;">♥</span> GRAVATA BORBOLETA B.S.</span> <span class="item-price">51 KROMER</span></li>
-            </ul>
-            <button onclick="window.alert('[HIPERLINK BLOQUEADO]')" class="spamton-btn">FUGIR CORRENDO</button>
+    <!-- POP-UP FALSO (Exemplo) -->
+    <div class="fake-popup" id="popup">
+        <div class="popup-header">
+            <span>SPAMTON.EXE</span>
+            <button onclick="document.getElementById('popup').style.display='none'">X</button>
+        </div>
+        <div class="popup-body">
+            <p>VOCÊ GANHOU UM [Prêmio Grátis]!</p>
+            <p>CLIQUE PARA RESGATAR SEU [PIPIS]!</p>
+            <button class="popup-btn" onclick="document.getElementById('popup').style.display='none'">OK</button>
         </div>
     </div>
 
-    <div class="rodape" id="contato">
-        <div class="r_esq">
-            <div class="logo-rodape-texto">SPAMTON G.<br>SPAMTON</div>
-        </div>
-        <div class="r_dir">
-            <ul>
-                <li><strong>Endereço:</strong> [[LIXÃO DA CIDADE CIBERNÉTICA]], Lote 1997</li>
-                <li><strong>Contato / Whatsapp:</strong> 1-800-SPAMTON</li>
-                <li><strong>Horários:</strong> SEMPRE ABERTO PARA [[GRANDES NEGÓCIOS]]</li>
-            </ul>
-        </div>
-    </div>
-
-    <script>
-        // Move o coração de seleção na lista de produtos
-        function moveHeart(index) {
-            const hearts = document.querySelectorAll('.heart-pointer');
-            hearts.forEach((heart, i) => {
-                heart.style.visibility = (i === index) ? 'visible' : 'hidden';
-            });
-        }
-    </script>
-</body>
-</html> produtos finalmente alcançaram os clicks! Ele conquistou seu próprio quarto na Mansão da Queen, ostentando carros e comerciais de TV. Mas quando seu misterioso benfeitor desapareceu no ar, suas vendas despencaram para zero...</p>
-            <p>Por que ser a [[Esponjinha]] que odeia sua vida de [[$4,99]] quando você pode se tornar o grande [[MANDA-CHUVA!!!]]</p>
-        </div>
-    </div>
-    <div class="p_dir">
-        <img src="imagens/Spamton.webp" alt="Spamton" class="imagem-conteudo">
-    </div>
-
-    <div class="d_esq" id="produtos">
-        <img src="imagens/Spamton_Shop.webp" alt="Loja do Spamton" class="imagem-conteudo">
-    </div>
-    <div class="d_dir">
-        <div class="texto">
-            <h2>[[PRODUTOS QUENTES]] DIRETO DA CYBER CITY</h2>
-            <ul class="shop-list">
-                <li onmouseenter="moveHeart(0)" onclick="moveHeart(0)"><span class="item-name"><span class="heart-pointer">♥</span> GeradorDeChaves</span> <span class="item-price">34898 KROMER</span></li>
-                <li onmouseenter="moveHeart(1)" onclick="moveHeart(1)"><span class="item-name"><span class="heart-pointer" style="visibility: hidden;">♥</span> Poção S.</span> <span class="item-price">147 KROMER</span></li>
-                <li onmouseenter="moveHeart(2)" onclick="moveHeart(2)"><span class="item-name"><span class="heart-pointer" style="visibility: hidden;">♥</span> "O MAIORAL"</span> <span class="item-price">93 KROMER</span></li>
-                <li onmouseenter="moveHeart(3)" onclick="moveHeart(3)"><span class="item-name"><span class="heart-pointer" style="visibility: hidden;">♥</span> GRAVATA BORBOLETA B.S.</span> <span class="item-price">51 KROMER</span></li>
-            </ul>
-            <button onclick="window.alert('[HIPERLINK BLOQUEADO]')" class="spamton-btn">FUGIR CORRENDO</button>
-        </div>
-    </div>
-
-    <div class="rodape" id="contato">
-        <div class="r_esq">
-            <div class="logo-rodape-texto">SPAMTON G.<br>SPAMTON</div>
-        </div>
-        <div class="r_dir">
-            <ul>
-                <li><strong>Endereço:</strong> [[LIXÃO DA CIDADE CIBERNÉTICA]], Lote 1997</li>
-                <li><strong>Contato / Whatsapp:</strong> 1-800-SPAMTON</li>
-                <li><strong>Horários:</strong> SEMPRE ABERTO PARA [[GRANDES NEGÓCIOS]]</li>
-            </ul>
-        </div>
-    </div>
-
-    <script>
-        function moveHeart(index) {
-            const hearts = document.querySelectorAll('.heart-pointer');
-            hearts.forEach((heart, i) => {
-                heart.style.visibility = (i === index) ? 'visible' : 'hidden';
-            });
-        }
-
-        function createPopup() {
-            // Limita a quantidade de pop-ups simultâneos (evita travar no celular)
-            if (document.querySelectorAll('.fake-popup').length >= 5) return;
-
-            const pop = document.createElement('div');
-            pop.className = 'fake-popup';
-
-            // Posicionamento seguro considerando o tamanho do pop-up
-            const maxTop = Math.max(10, 80 - (280 / window.innerHeight) * 100);
-            const maxLeft = Math.max(5, 90 - (300 / window.innerWidth) * 100);
-            pop.style.top = (Math.random() * (maxTop - 5) + 5) + '%';
-            pop.style.left = (Math.random() * (maxLeft - 5) + 5) + '%';
-
-            const titles = ["[[PROMOÇÃO INCRÍVEL]]", "[[KROMER GRÁTIS!!!]]", "VOCÊ É O [[MANDA-CHUVA]]", "[[OFERTA ESPECIAL]]"];
-            const texts = ["CLIQUE AQUI PARA GANHAR ALMA GRÁTIS!", "AUMENTE SEU [[Status de Vendas]] EM 400%!", "VOCÊ GANHOU 100000 [Kromer]!", "[Hiperlink Bloqueado]"];
-
-            pop.innerHTML = `
-                <div class="popup-header"><span>${titles[Math.floor(Math.random()*titles.length)]}</span><button onclick="this.parentElement.parentElement.remove()">X</button></div>
-                <div class="popup-body"><p>${texts[Math.floor(Math.random()*texts.length)]}</p><button class="popup-btn">VER AGORA!</button></div>
-            `;
-            document.body.appendChild(pop);
-        }
-
-        setInterval(createPopup, 5000);
-        window.addEventListener('load', createPopup);
-    </script>
 </body>
 </html>
